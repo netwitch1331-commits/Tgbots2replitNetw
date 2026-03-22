@@ -1,15 +1,22 @@
 {
   "version": 2,
+  "installCommand": "pnpm install && pnpm --filter @workspace/api-server run build",
   "builds": [
     {
-      "src": "artifacts/api-server/src/app.ts",
-      "use": "@vercel/node"
+      "src": "artifacts/api-server/dist/app.mjs",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "node_modules/.pnpm/geoip-lite*/**",
+          "artifacts/api-server/dist/**"
+        ]
+      }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/artifacts/api-server/src/app.ts"
+      "dest": "/artifacts/api-server/dist/app.mjs"
     }
   ]
 }
