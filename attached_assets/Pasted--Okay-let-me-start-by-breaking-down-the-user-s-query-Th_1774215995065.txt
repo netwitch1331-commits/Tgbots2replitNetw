@@ -1,0 +1,51 @@
+Ход рассуждения . . .
+​
+ Okay, let me start by breaking down the user's query. They're asking how to fix something, but since the history is empty, I need to figure out the context first.
+ 
+ Hmm, the current query is just "Как исправить" which translates to "How to fix." The user is likely referring to a previous issue, but there's no context in the history. Maybe they’re facing a technical problem mentioned earlier, but since it's not here, I should consider common scenarios.
+ 
+ Wait, the assistant’s response talks about Vercel serverless function crashes. That must be what the user is asking about. So the user probably encountered the "FUNCTION_INVOCATION_FAILED" error and needs steps to resolve it.
+ 
+ The user might not just want a list of fixes but a structured approach. They could be a developer deploying on Vercel, possibly with intermediate knowledge since they’re using serverless functions. The deep need here isn’t just steps but understanding the root cause to prevent future crashes.
+ 
+ I should prioritize the most common causes first, like checking logs and recent code changes. Emphasizing the Vercel dashboard makes sense because it’s the primary tool they’ll use. Including environment variables and dependencies covers hidden issues that aren’t obvious.
+ 
+ Also, the user might be in a hurry, so organizing steps from quick checks to more in-depth solutions helps them troubleshoot efficiently. Mentioning local testing and support options gives them a fallback if they’re stuck. Making sure the language stays clear without jargon, since they might be stressed about the crash affecting their service.
+
+
+Чтобы исправить ошибку FUNCTION_INVOCATION_FAILED (код 500) в Serverless Function на Vercel, выполните следующую пошаговую инструкцию.
+
+▎1. Проверьте логи — это самый важный шаг
+
+Логи содержат конкретное сообщение об ошибке, которое привело к падению функции.
+• В Vercel Dashboard: Перейдите в проект → вкладка "Functions" → выберите упавшую функцию (например, api/your-endpoint.js) → просмотрите "Logs". Здесь вы увидите стек вызовов (stack trace) и ошибку.
+• В терминале: Если вы используете Vercel CLI, выполните vercel logs <url-вашего-проекта>.
+
+Что искать в логах:
+• Синтаксические ошибки (SyntaxError)
+• Импорт несуществующих модулей (ModuleNotFoundError)
+• Ошибки времени выполнения (TypeError, ReferenceError)
+• Превышение лимита памяти или времени выполнения (если функция слишком ресурсоемкая).
+
+▎2. Проверьте последние изменения
+
+Что вы меняли перед появлением ошибки?
+• Код функции: Добавили новый npm-пакет, изменили логику, обновили переменные окружения?
+• vercel.json или другие конфигурации: Изменяли настройки маршрутизации (routes), заголовков или параметров функций (maxDuration, memory)?
+• Переменные окружения (Environment Variables): Добавили новые или изменили существующие? Убедитесь, что они правильно указаны в Dashboard проекта (Settings → Environment Variables).
+
+▎3. Проверьте лимиты ресурсов
+
+По умолчанию у Serverless Functions на бесплатном плане есть ограничения:
+• Таймаут выполнения (Timeout): 10 секунд для тарифа Hobby, 15 для Pro. Если ваша функция выполняется дольше (например, делает тяжелые вычисления или долгие внешние запросы), она будет прервана.
+    – Решение: Оптимизируйте код, разбейте задачу или увеличьте лимит в конфигурации функции (см. пункт 5).
+• Потребление памяти (Memory): Лимит памяти (например, 1024 MB). При его превышении функция падает.
+    – Решение: Оптимизируйте использование памяти в коде.
+
+▎4. Протестируйте функцию локально
+
+Запустите среду разработки, чтобы отловить ошибки до деплоя.
+• Используйте vercel dev для запуска локального сервера, который максимально точно имитирует продакшен-среду Vercel.
+• Протестируйте эндпоинт, который падает, используя браузер, curl или инструменты вроде Postman.
+
+▎5. Проверьте и настройте конфигурацию функции

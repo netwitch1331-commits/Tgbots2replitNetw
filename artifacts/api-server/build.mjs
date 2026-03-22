@@ -116,15 +116,19 @@ async function buildAll() {
     banner: { js: esmBanner },
   });
 
+  const projectRoot = path.resolve(artifactDir, "../..");
   await esbuild({
     entryPoints: [path.resolve(artifactDir, "src/app.ts")],
     platform: "node",
     bundle: true,
     format: "cjs",
-    outfile: path.resolve(distDir, "vercel.cjs"),
+    outfile: path.resolve(projectRoot, "api/index.js"),
     logLevel: "info",
     external: nativeExternals,
     sourcemap: false,
+    footer: {
+      js: `if(module.exports&&module.exports.__esModule&&module.exports.default){module.exports=module.exports.default;}`,
+    },
   });
 }
 
