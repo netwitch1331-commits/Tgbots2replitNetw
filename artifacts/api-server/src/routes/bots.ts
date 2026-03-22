@@ -3,7 +3,12 @@ import { Router, type IRouter } from "express";
 import { db } from "@workspace/db";
 import { botsTable, categoriesTable, botViewsTable } from "@workspace/db/schema";
 import { ilike, eq, desc, asc, sql, and, gte } from "drizzle-orm";
-import geoip from "geoip-lite";
+let geoip: { lookup: (ip: string) => { country?: string } | null } | null = null;
+try {
+  geoip = require("geoip-lite");
+} catch {
+  // geoip-lite data files unavailable (e.g. Vercel serverless) — skip geolocation
+}
 import {
   ListBotsResponse,
   GetBotResponse,
@@ -122,7 +127,7 @@ router.post("/bots/:id/view", async (req, res) => {
   }
 
   // Geolocation lookup
-  const geo = geoip.lookup(rawIp);
+  const geo = geoip?.lookup(rawIp) ?? null;
   const countryNames: Record<string, string> = {
     RU: "Россия", US: "США", DE: "Германия", GB: "Великобритания",
     FR: "Франция", UA: "Украина", KZ: "Казахстан", BY: "Беларусь",
