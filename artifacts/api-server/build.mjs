@@ -125,9 +125,6 @@ async function buildAll() {
     logLevel: "info",
     external: nativeExternals,
     sourcemap: false,
-    banner: {
-      js: `const __require = typeof require !== 'undefined' ? require : (await import('node:module')).createRequire(import.meta.url);`,
-    },
   });
 }
 
