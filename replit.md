@@ -55,7 +55,7 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 
 ## Workflows
 
-- **API Server** — `pnpm --filter @workspace/api-server run dev` (port 8080, console output)
+- **API Server** — `pnpm --filter @workspace/api-server run dev` (port 3001, console output)
 - **Telegram Bots Web** — `PORT=21880 BASE_PATH=/ pnpm --filter @workspace/tg-bots run dev` (port 21880, webview output)
 
 ## Root Scripts
@@ -71,7 +71,7 @@ Express 5 API server. Routes live in `src/routes/` and use `@workspace/api-zod` 
 
 - Entry: `src/index.ts` — reads `PORT`, starts Express
 - App setup: `src/app.ts` — mounts CORS, JSON/urlencoded parsing, routes at `/api`
-- Routes: `src/routes/index.ts` mounts sub-routers; `src/routes/health.ts` exposes `GET /health` (full path: `/api/health`)
+- Routes: `src/routes/index.ts` mounts sub-routers; `src/routes/health.ts` exposes `GET /healthz` (full path: `/api/healthz`)
 - Depends on: `@workspace/db`, `@workspace/api-zod`
 - `pnpm --filter @workspace/api-server run dev` — run the dev server
 - `pnpm --filter @workspace/api-server run build` — production esbuild bundle (`dist/index.cjs`)
