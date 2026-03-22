@@ -1,5 +1,5 @@
-import categoriesData from "../data/categories.json";
-import botsData from "../data/bots.json";
+import categoriesData from "../data/categories.json" with { type: "json" };
+import botsData from "../data/bots.json" with { type: "json" };
 
 export interface Category {
   id: number;
