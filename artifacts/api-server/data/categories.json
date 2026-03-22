@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "AI & Нейросети",
+    "slug": "ai",
+    "emoji": "🤖",
+    "count": 4
+  },
+  {
+    "id": 2,
+    "name": "Продуктивность",
+    "slug": "productivity",
+    "emoji": "⚡",
+    "count": 4
+  },
+  {
+    "id": 3,
+    "name": "Развлечения",
+    "slug": "entertainment",
+    "emoji": "🎮",
+    "count": 2
+  },
+  {
+    "id": 4,
+    "name": "Новости",
+    "slug": "news",
+    "emoji": "📰",
+    "count": 2
+  },
+  {
+    "id": 5,
+    "name": "Финансы",
+    "slug": "finance",
+    "emoji": "💰",
+    "count": 2
+  },
+  {
+    "id": 6,
+    "name": "Образование",
+    "slug": "education",
+    "emoji": "📚",
+    "count": 2
+  },
+  {
+    "id": 7,
+    "name": "Музыка",
+    "slug": "music",
+    "emoji": "🎵",
+    "count": 2
+  },
+  {
+    "id": 8,
+    "name": "Шопинг",
+    "slug": "shopping",
+    "emoji": "🛍️",
+    "count": 2
+  },
+  {
+    "id": 9,
+    "name": "Путешествия",
+    "slug": "travel",
+    "emoji": "✈️",
+    "count": 2
+  },
+  {
+    "id": 10,
+    "name": "Здоровье",
+    "slug": "health",
+    "emoji": "💪",
+    "count": 2
+  }
+]

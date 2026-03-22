@@ -1,0 +1,483 @@
+[
+  {
+    "id": 1,
+    "username": "ChatGPT_Bot",
+    "name": "ChatGPT",
+    "description": "Мощный AI-ассистент от OpenAI. Отвечает на вопросы, пишет тексты, помогает с кодом и анализирует данные.",
+    "category": "AI & Нейросети",
+    "categoryId": 1,
+    "rating": 4.9,
+    "reviewCount": 125400,
+    "isVerified": true,
+    "isPremium": false,
+    "tags": [
+      "GPT-4",
+      "Чат",
+      "Код",
+      "Текст"
+    ],
+    "monthlyUsers": 15000000,
+    "iconEmoji": "🧠",
+    "telegramUrl": "https://t.me/ChatGPT_Bot"
+  },
+  {
+    "id": 2,
+    "username": "MidJourney_Bot",
+    "name": "Midjourney AI Art",
+    "description": "Создавай потрясающие AI-изображения по текстовому описанию. Фотореализм, арт, иллюстрации.",
+    "category": "AI & Нейросети",
+    "categoryId": 1,
+    "rating": 4.8,
+    "reviewCount": 89200,
+    "isVerified": true,
+    "isPremium": true,
+    "tags": [
+      "Изображения",
+      "AI Art",
+      "Творчество"
+    ],
+    "monthlyUsers": 8500000,
+    "iconEmoji": "🎨",
+    "telegramUrl": "https://t.me/MidJourney_Bot"
+  },
+  {
+    "id": 3,
+    "username": "GrammarlyBot",
+    "name": "Grammarly",
+    "description": "Проверяет грамматику, орфографию и стиль текста. Поддерживает русский и английский языки.",
+    "category": "Продуктивность",
+    "categoryId": 2,
+    "rating": 4.7,
+    "reviewCount": 45600,
+    "isVerified": true,
+    "isPremium": false,
+    "tags": [
+      "Текст",
+      "Грамматика",
+      "Редактор"
+    ],
+    "monthlyUsers": 5200000,
+    "iconEmoji": "✏️",
+    "telegramUrl": "https://t.me/GrammarlyBot"
+  },
+  {
+    "id": 4,
+    "username": "NotionAI_Bot",
+    "name": "Notion AI",
+    "description": "AI-помощник для заметок и задач. Суммаризирует, переводит, создаёт планы и структурирует информацию.",
+    "category": "Продуктивность",
+    "categoryId": 2,
+    "rating": 4.6,
+    "reviewCount": 32100,
+    "isVerified": true,
+    "isPremium": true,
+    "tags": [
+      "Заметки",
+      "AI",
+      "Задачи"
+    ],
+    "monthlyUsers": 3800000,
+    "iconEmoji": "📝",
+    "telegramUrl": "https://t.me/NotionAI_Bot"
+  },
+  {
+    "id": 5,
+    "username": "Meme_Generator_Bot",
+    "name": "Meme Factory",
+    "description": "Генерируй мемы за секунды! Тысячи шаблонов, редактор текста и готовые мемы для любого случая.",
+    "category": "Развлечения",
+    "categoryId": 3,
+    "rating": 4.5,
+    "reviewCount": 67800,
+    "isVerified": false,
+    "isPremium": false,
+    "tags": [
+      "Мемы",
+      "Юмор",
+      "Картинки"
+    ],
+    "monthlyUsers": 7200000,
+    "iconEmoji": "😂",
+    "telegramUrl": "https://t.me/Meme_Generator_Bot"
+  },
+  {
+    "id": 6,
+    "username": "QuizBot",
+    "name": "Quiz Master",
+    "description": "Викторины на любую тему: история, наука, кино, спорт. Играй один или с друзьями в группе.",
+    "category": "Развлечения",
+    "categoryId": 3,
+    "rating": 4.4,
+    "reviewCount": 28900,
+    "isVerified": false,
+    "isPremium": false,
+    "tags": [
+      "Викторина",
+      "Игра",
+      "Знания"
+    ],
+    "monthlyUsers": 4100000,
+    "iconEmoji": "🧩",
+    "telegramUrl": "https://t.me/QuizBot"
+  },
+  {
+    "id": 7,
+    "username": "BBCNewsBot",
+    "name": "BBC News",
+    "description": "Свежие новости от BBC. Мировые события, политика, технологии и спорт каждый час.",
+    "category": "Новости",
+    "categoryId": 4,
+    "rating": 4.7,
+    "reviewCount": 54300,
+    "isVerified": true,
+    "isPremium": false,
+    "tags": [
+      "Мировые новости",
+      "BBC",
+      "Политика"
+    ],
+    "monthlyUsers": 9800000,
+    "iconEmoji": "📡",
+    "telegramUrl": "https://t.me/BBCNewsBot"
+  },
+  {
+    "id": 8,
+    "username": "TechCrunchBot",
+    "name": "TechCrunch Daily",
+    "description": "Новости технологий, стартапов и IT-индустрии от TechCrunch. Обновляется несколько раз в день.",
+    "category": "Новости",
+    "categoryId": 4,
+    "rating": 4.5,
+    "reviewCount": 31200,
+    "isVerified": true,
+    "isPremium": false,
+    "tags": [
+      "Технологии",
+      "Стартапы",
+      "IT"
+    ],
+    "monthlyUsers": 5600000,
+    "iconEmoji": "💻",
+    "telegramUrl": "https://t.me/TechCrunchBot"
+  },
+  {
+    "id": 9,
+    "username": "CryptoSignalsBot",
+    "name": "Crypto Signals Pro",
+    "description": "Торговые сигналы для криптовалют. Анализ рынка, уведомления о ценах и прогнозы от AI.",
+    "category": "Финансы",
+    "categoryId": 5,
+    "rating": 4.3,
+    "reviewCount": 21600,
+    "isVerified": false,
+    "isPremium": true,
+    "tags": [
+      "Крипто",
+      "Торговля",
+      "Сигналы"
+    ],
+    "monthlyUsers": 2900000,
+    "iconEmoji": "📈",
+    "telegramUrl": "https://t.me/CryptoSignalsBot"
+  },
+  {
+    "id": 10,
+    "username": "InvestHelperBot",
+    "name": "Invest Helper",
+    "description": "Анализ акций и ETF, новости фондового рынка, калькулятор доходности и портфельный трекер.",
+    "category": "Финансы",
+    "categoryId": 5,
+    "rating": 4.4,
+    "reviewCount": 18700,
+    "isVerified": true,
+    "isPremium": false,
+    "tags": [
+      "Акции",
+      "Инвестиции",
+      "Аналитика"
+    ],
+    "monthlyUsers": 2200000,
+    "iconEmoji": "💹",
+    "telegramUrl": "https://t.me/InvestHelperBot"
+  },
+  {
+    "id": 11,
+    "username": "DuolingoBot",
+    "name": "Duolingo",
+    "description": "Учи иностранные языки в игровом формате. 40+ языков, ежедневные уроки и мотивационная система.",
+    "category": "Образование",
+    "categoryId": 6,
+    "rating": 4.8,
+    "reviewCount": 98400,
+    "isVerified": true,
+    "isPremium": false,
+    "tags": [
+      "Языки",
+      "Обучение",
+      "Игра"
+    ],
+    "monthlyUsers": 12000000,
+    "iconEmoji": "🦉",
+    "telegramUrl": "https://t.me/DuolingoBot"
+  },
+  {
+    "id": 12,
+    "username": "KhanAcademyBot",
+    "name": "Khan Academy",
+    "description": "Бесплатные видеоуроки по математике, физике, химии и другим предметам. От школьника до студента.",
+    "category": "Образование",
+    "categoryId": 6,
+    "rating": 4.6,
+    "reviewCount": 43200,
+    "isVerified": true,
+    "isPremium": false,
+    "tags": [
+      "Математика",
+      "Наука",
+      "Видеоуроки"
+    ],
+    "monthlyUsers": 6700000,
+    "iconEmoji": "🎓",
+    "telegramUrl": "https://t.me/KhanAcademyBot"
+  },
+  {
+    "id": 13,
+    "username": "SpotifyBot",
+    "name": "Spotify",
+    "description": "Управляй Spotify прямо из Telegram. Ищи треки, создавай плейлисты и делись музыкой с друзьями.",
+    "category": "Музыка",
+    "categoryId": 7,
+    "rating": 4.5,
+    "reviewCount": 56700,
+    "isVerified": true,
+    "isPremium": false,
+    "tags": [
+      "Музыка",
+      "Плейлист",
+      "Стриминг"
+    ],
+    "monthlyUsers": 8900000,
+    "iconEmoji": "🎧",
+    "telegramUrl": "https://t.me/SpotifyBot"
+  },
+  {
+    "id": 14,
+    "username": "SoundHoundBot",
+    "name": "SoundHound",
+    "description": "Определяй музыку по мелодии или голосу. Отправь аудио и узнай название трека мгновенно.",
+    "category": "Музыка",
+    "categoryId": 7,
+    "rating": 4.4,
+    "reviewCount": 23400,
+    "isVerified": false,
+    "isPremium": false,
+    "tags": [
+      "Распознавание",
+      "Музыка",
+      "Поиск"
+    ],
+    "monthlyUsers": 3300000,
+    "iconEmoji": "🎵",
+    "telegramUrl": "https://t.me/SoundHoundBot"
+  },
+  {
+    "id": 15,
+    "username": "AliExpressBot",
+    "name": "AliExpress",
+    "description": "Поиск товаров на AliExpress, отслеживание заказов и уведомления о скидках и акциях.",
+    "category": "Шопинг",
+    "categoryId": 8,
+    "rating": 4.2,
+    "reviewCount": 78900,
+    "isVerified": true,
+    "isPremium": false,
+    "tags": [
+      "Шопинг",
+      "Скидки",
+      "Доставка"
+    ],
+    "monthlyUsers": 11000000,
+    "iconEmoji": "🛒",
+    "telegramUrl": "https://t.me/AliExpressBot"
+  },
+  {
+    "id": 16,
+    "username": "PriceTrackerBot",
+    "name": "Price Tracker",
+    "description": "Следи за ценами на товары в магазинах. Уведомления при снижении цены на Amazon, Ozon, Wildberries.",
+    "category": "Шопинг",
+    "categoryId": 8,
+    "rating": 4.5,
+    "reviewCount": 34100,
+    "isVerified": false,
+    "isPremium": false,
+    "tags": [
+      "Цены",
+      "Скидки",
+      "Мониторинг"
+    ],
+    "monthlyUsers": 4500000,
+    "iconEmoji": "🏷️",
+    "telegramUrl": "https://t.me/PriceTrackerBot"
+  },
+  {
+    "id": 17,
+    "username": "SkyscannerBot",
+    "name": "Skyscanner",
+    "description": "Поиск дешёвых авиабилетов и отелей. Сравнение цен, уведомления и бронирование прямо в Telegram.",
+    "category": "Путешествия",
+    "categoryId": 9,
+    "rating": 4.6,
+    "reviewCount": 41800,
+    "isVerified": true,
+    "isPremium": false,
+    "tags": [
+      "Авиабилеты",
+      "Отели",
+      "Путешествия"
+    ],
+    "monthlyUsers": 6200000,
+    "iconEmoji": "✈️",
+    "telegramUrl": "https://t.me/SkyscannerBot"
+  },
+  {
+    "id": 18,
+    "username": "WeatherBot",
+    "name": "Weather Pro",
+    "description": "Точный прогноз погоды на 7 дней для любого города мира. Часовые обновления и погодные предупреждения.",
+    "category": "Путешествия",
+    "categoryId": 9,
+    "rating": 4.3,
+    "reviewCount": 62400,
+    "isVerified": false,
+    "isPremium": false,
+    "tags": [
+      "Погода",
+      "Прогноз",
+      "Города"
+    ],
+    "monthlyUsers": 8700000,
+    "iconEmoji": "🌤️",
+    "telegramUrl": "https://t.me/WeatherBot"
+  },
+  {
+    "id": 19,
+    "username": "FitnessPlanBot",
+    "name": "AI Fitness Coach",
+    "description": "Персональный фитнес-план от AI. Тренировки, питание, трекинг прогресса и мотивационные напоминания.",
+    "category": "Здоровье",
+    "categoryId": 10,
+    "rating": 4.5,
+    "reviewCount": 29600,
+    "isVerified": false,
+    "isPremium": true,
+    "tags": [
+      "Фитнес",
+      "Тренировки",
+      "AI"
+    ],
+    "monthlyUsers": 3900000,
+    "iconEmoji": "🏋️",
+    "telegramUrl": "https://t.me/FitnessPlanBot"
+  },
+  {
+    "id": 20,
+    "username": "MeditationBot",
+    "name": "Calm & Meditate",
+    "description": "Медитации, дыхательные упражнения и техники снятия стресса. Для начинающих и опытных практиков.",
+    "category": "Здоровье",
+    "categoryId": 10,
+    "rating": 4.7,
+    "reviewCount": 38200,
+    "isVerified": true,
+    "isPremium": false,
+    "tags": [
+      "Медитация",
+      "Здоровье",
+      "Стресс"
+    ],
+    "monthlyUsers": 5100000,
+    "iconEmoji": "🧘",
+    "telegramUrl": "https://t.me/MeditationBot"
+  },
+  {
+    "id": 21,
+    "username": "ClaudeAIBot",
+    "name": "Claude AI",
+    "description": "AI-ассистент от Anthropic с расширенным контекстом. Анализирует длинные документы и пишет подробные тексты.",
+    "category": "AI & Нейросети",
+    "categoryId": 1,
+    "rating": 4.8,
+    "reviewCount": 67300,
+    "isVerified": true,
+    "isPremium": false,
+    "tags": [
+      "Claude",
+      "Документы",
+      "Анализ"
+    ],
+    "monthlyUsers": 9200000,
+    "iconEmoji": "✨",
+    "telegramUrl": "https://t.me/ClaudeAIBot"
+  },
+  {
+    "id": 22,
+    "username": "PerplexityBot",
+    "name": "Perplexity AI",
+    "description": "AI-поисковик нового поколения. Ищет актуальную информацию в интернете и даёт ответы с источниками.",
+    "category": "AI & Нейросети",
+    "categoryId": 1,
+    "rating": 4.7,
+    "reviewCount": 48900,
+    "isVerified": true,
+    "isPremium": false,
+    "tags": [
+      "Поиск",
+      "AI",
+      "Источники"
+    ],
+    "monthlyUsers": 7100000,
+    "iconEmoji": "🔍",
+    "telegramUrl": "https://t.me/PerplexityBot"
+  },
+  {
+    "id": 23,
+    "username": "TranslatorBot",
+    "name": "DeepL Translator",
+    "description": "Лучший переводчик с AI. Поддерживает 30+ языков, сохраняет контекст и стиль речи при переводе.",
+    "category": "Продуктивность",
+    "categoryId": 2,
+    "rating": 4.8,
+    "reviewCount": 112000,
+    "isVerified": true,
+    "isPremium": false,
+    "tags": [
+      "Перевод",
+      "Языки",
+      "DeepL"
+    ],
+    "monthlyUsers": 18000000,
+    "iconEmoji": "🌐",
+    "telegramUrl": "https://t.me/TranslatorBot"
+  },
+  {
+    "id": 24,
+    "username": "PDFBot",
+    "name": "PDF Manager",
+    "description": "Конвертируй, объединяй, сжимай и редактируй PDF прямо в Telegram. Быстро и без регистрации.",
+    "category": "Продуктивность",
+    "categoryId": 2,
+    "rating": 4.6,
+    "reviewCount": 87300,
+    "isVerified": false,
+    "isPremium": false,
+    "tags": [
+      "PDF",
+      "Конвертация",
+      "Документы"
+    ],
+    "monthlyUsers": 10500000,
+    "iconEmoji": "📄",
+    "telegramUrl": "https://t.me/PDFBot"
+  }
+]

@@ -1,13 +1,16 @@
 import { createHash } from "crypto";
 import { Router, type IRouter } from "express";
-import { db } from "@workspace/db";
-import { botsTable, categoriesTable, botViewsTable } from "@workspace/db/schema";
-import { ilike, eq, desc, asc, sql, and, gte } from "drizzle-orm";
+import {
+  getBots,
+  getBotById,
+  getCategories,
+  addView,
+  hasRecentView,
+} from "../store.js";
 let geoip: { lookup: (ip: string) => { country?: string; city?: string; region?: string; ll?: [number, number] } | null } | null = null;
 try {
   geoip = require("geoip-lite");
 } catch {
-  // geoip-lite data files unavailable (e.g. Vercel serverless) — skip geolocation
 }
 import {
   ListBotsResponse,
@@ -37,34 +40,7 @@ router.get("/bots", async (req, res) => {
     sortBy?: string;
   };
 
-  let query = db.select().from(botsTable).$dynamic();
-
-  if (category) {
-    const cat = await db
-      .select()
-      .from(categoriesTable)
-      .where(eq(categoriesTable.slug, category))
-      .limit(1);
-    if (cat.length > 0) {
-      query = query.where(eq(botsTable.categoryId, cat[0].id));
-    }
-  }
-
-  if (search) {
-    query = query.where(
-      sql`(${botsTable.name} ILIKE ${"%" + search + "%"} OR ${botsTable.description} ILIKE ${"%" + search + "%"} OR ${botsTable.username} ILIKE ${"%" + search + "%"})`
-    );
-  }
-
-  if (sortBy === "name") {
-    query = query.orderBy(asc(botsTable.name));
-  } else if (sortBy === "popular") {
-    query = query.orderBy(desc(botsTable.monthlyUsers));
-  } else {
-    query = query.orderBy(desc(botsTable.rating));
-  }
-
-  const bots = await query;
+  const bots = getBots({ categorySlug: category, search, sortBy });
   const parsed = ListBotsResponse.parse(bots);
   res.json(parsed);
 });
@@ -76,12 +52,7 @@ router.get("/bots/:id", async (req, res) => {
     return;
   }
 
-  const [bot] = await db
-    .select()
-    .from(botsTable)
-    .where(eq(botsTable.id, id))
-    .limit(1);
-
+  const bot = getBotById(id);
   if (!bot) {
     res.status(404).json({ message: "Bot not found" });
     return;
@@ -98,7 +69,7 @@ router.post("/bots/:id/view", async (req, res) => {
     return;
   }
 
-  const [bot] = await db.select().from(botsTable).where(eq(botsTable.id, id)).limit(1);
+  const bot = getBotById(id);
   if (!bot) {
     res.status(404).json({ message: "Bot not found" });
     return;
@@ -107,26 +78,11 @@ router.post("/bots/:id/view", async (req, res) => {
   const rawIp = getRealIp(req);
   const ipHash = hashIp(rawIp);
 
-  // Deduplication: ignore repeated views from same IP within 24 hours
-  const oneDayAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
-  const [existing] = await db
-    .select({ id: botViewsTable.id })
-    .from(botViewsTable)
-    .where(
-      and(
-        eq(botViewsTable.botId, id),
-        eq(botViewsTable.ipHash, ipHash),
-        gte(botViewsTable.viewedAt, oneDayAgo)
-      )
-    )
-    .limit(1);
-
-  if (existing) {
+  if (hasRecentView(id, ipHash)) {
     res.json({ status: "duplicate" });
     return;
   }
 
-  // Geolocation lookup
   const geo = geoip?.lookup(rawIp) ?? null;
   const countryNames: Record<string, string> = {
     RU: "Россия", US: "США", DE: "Германия", GB: "Великобритания",
@@ -145,8 +101,9 @@ router.post("/bots/:id/view", async (req, res) => {
   const country = countryNames[countryCode] || geo?.country || "Другие";
   const city = geo?.city || "";
 
-  await db.insert(botViewsTable).values({
+  addView({
     botId: id,
+    viewedAt: new Date(),
     ipHash,
     country,
     countryCode,
@@ -157,12 +114,8 @@ router.post("/bots/:id/view", async (req, res) => {
 });
 
 router.get("/categories", async (_req, res) => {
-  const categories = await db
-    .select()
-    .from(categoriesTable)
-    .orderBy(asc(categoriesTable.name));
-
-  const parsed = ListCategoriesResponse.parse(categories);
+  const cats = getCategories();
+  const parsed = ListCategoriesResponse.parse(cats);
   res.json(parsed);
 });
 
