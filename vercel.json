@@ -1,11 +1,6 @@
 {
   "version": 2,
   "installCommand": "pnpm install && pnpm --filter @workspace/api-server run build",
-  "functions": {
-    "api/index.mjs": {
-      "includeFiles": "{artifacts/api-server/dist/**,node_modules/.pnpm/geoip-lite*/**}"
-    }
-  },
   "rewrites": [
     { "source": "/(.*)", "destination": "/api" }
   ]
