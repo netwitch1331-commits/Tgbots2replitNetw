@@ -3,7 +3,7 @@ import { Router, type IRouter } from "express";
 import { db } from "@workspace/db";
 import { botsTable, categoriesTable, botViewsTable } from "@workspace/db/schema";
 import { ilike, eq, desc, asc, sql, and, gte } from "drizzle-orm";
-let geoip: { lookup: (ip: string) => { country?: string } | null } | null = null;
+let geoip: { lookup: (ip: string) => { country?: string; city?: string; region?: string; ll?: [number, number] } | null } | null = null;
 try {
   geoip = require("geoip-lite");
 } catch {
