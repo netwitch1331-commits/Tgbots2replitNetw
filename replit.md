@@ -53,6 +53,11 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 - **`emitDeclarationOnly`** — we only emit `.d.ts` files during typecheck; actual JS bundling is handled by esbuild/tsx/vite...etc, not `tsc`.
 - **Project references** — when package A depends on package B, A's `tsconfig.json` must list B in its `references` array. `tsc --build` uses this to determine build order and skip up-to-date packages.
 
+## Workflows
+
+- **API Server** — `pnpm --filter @workspace/api-server run dev` (port 8080, console output)
+- **Telegram Bots Web** — `PORT=21880 BASE_PATH=/ pnpm --filter @workspace/tg-bots run dev` (port 21880, webview output)
+
 ## Root Scripts
 
 - `pnpm run build` — runs `typecheck` first, then recursively runs `build` in all packages that define it
